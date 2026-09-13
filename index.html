@@ -1,1 +1,1233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#07080d">
+<meta name="description" content="KEMP EYE AI — 10-Day Rejuvenation Quest">
+<title>KEMP EYE 👁 AI — 10-Day Rejuvenation Quest</title>
 
+<style>
+* {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100%;
+  background: #07080d;
+  color: #f4f4f4;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+button {
+  font: inherit;
+}
+
+.app {
+  width: 100%;
+  max-width: 520px;
+  min-height: 100vh;
+  margin: auto;
+  padding: 18px 18px 30px;
+  position: relative;
+}
+
+/* HEADER */
+
+.header {
+  text-align: center;
+  padding: 12px 0 8px;
+}
+
+.logo {
+  font-size: 25px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.logo span {
+  font-size: 29px;
+}
+
+.subtitle {
+  margin-top: 7px;
+  font-size: 12px;
+  letter-spacing: 2px;
+  opacity: .65;
+}
+
+/* EYE */
+
+.eye-area {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 110px;
+}
+
+.eye {
+  width: 76px;
+  height: 42px;
+  border: 2px solid #fff;
+  border-radius: 80% 10%;
+  transform: rotate(45deg);
+  position: relative;
+  animation: eyePulse 4s ease-in-out infinite;
+}
+
+.eye::after {
+  content: "";
+  position: absolute;
+  width: 19px;
+  height: 19px;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  left: 26px;
+  top: 9px;
+  transform: rotate(-45deg);
+}
+
+@keyframes eyePulse {
+  0%,100% {
+    transform: rotate(45deg) scale(1);
+    opacity: .7;
+  }
+  50% {
+    transform: rotate(45deg) scale(1.08);
+    opacity: 1;
+  }
+}
+
+/* DAY */
+
+.day-label {
+  text-align: center;
+  font-size: 13px;
+  letter-spacing: 3px;
+  opacity: .7;
+}
+
+.day-title {
+  text-align: center;
+  margin: 7px 0 4px;
+  font-size: 27px;
+}
+
+.day-theme {
+  text-align: center;
+  opacity: .65;
+  font-size: 13px;
+}
+
+/* CHARGING STATION */
+
+.station {
+  margin: 25px auto 22px;
+  text-align: center;
+}
+
+.battery {
+  width: 220px;
+  height: 74px;
+  margin: auto;
+  border: 3px solid #eee;
+  border-radius: 14px;
+  padding: 5px;
+  position: relative;
+}
+
+.battery::after {
+  content: "";
+  position: absolute;
+  width: 9px;
+  height: 28px;
+  right: -12px;
+  top: 20px;
+  background: #eee;
+  border-radius: 0 5px 5px 0;
+}
+
+.battery-fill {
+  height: 100%;
+  width: 10%;
+  border-radius: 7px;
+  background: linear-gradient(
+    90deg,
+    #6dff8c,
+    #e7ff75
+  );
+  transition: width 1.2s ease;
+  box-shadow: 0 0 22px rgba(150,255,120,.5);
+}
+
+.charge-number {
+  margin-top: 10px;
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.charge-note {
+  font-size: 10px;
+  opacity: .45;
+  margin-top: 3px;
+}
+
+/* EXPERIENCE CARD */
+
+.experience {
+  background: rgba(255,255,255,.045);
+  border: 1px solid rgba(255,255,255,.1);
+  border-radius: 22px;
+  padding: 25px 20px;
+  min-height: 270px;
+  position: relative;
+  overflow: hidden;
+}
+
+.experience::before {
+  content: "";
+  position: absolute;
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(160,220,255,.12),
+    transparent 70%
+  );
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  animation: atmosphere 7s ease-in-out infinite;
+}
+
+@keyframes atmosphere {
+  0%,100% {
+    transform: translate(-50%,-50%) scale(.8);
+    opacity: .4;
+  }
+  50% {
+    transform: translate(-50%,-50%) scale(1.5);
+    opacity: 1;
+  }
+}
+
+.narrative {
+  position: relative;
+  z-index: 2;
+  min-height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  line-height: 1.8;
+  font-size: 18px;
+  font-weight: 300;
+  white-space: pre-line;
+}
+
+.phase {
+  text-align: center;
+  font-size: 10px;
+  letter-spacing: 3px;
+  opacity: .5;
+  margin-bottom: 15px;
+}
+
+/* TIMER */
+
+.timer {
+  text-align: center;
+  margin: 18px 0;
+}
+
+.timer-number {
+  font-size: 42px;
+  font-weight: 300;
+  letter-spacing: 2px;
+}
+
+.timer-label {
+  font-size: 10px;
+  letter-spacing: 2px;
+  opacity: .45;
+}
+
+/* CONTROLS */
+
+.controls {
+  display: flex;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.btn {
+  flex: 1;
+  min-height: 52px;
+  border: 1px solid rgba(255,255,255,.2);
+  border-radius: 14px;
+  background: rgba(255,255,255,.07);
+  color: white;
+  cursor: pointer;
+}
+
+.btn.primary {
+  background: white;
+  color: #090a0e;
+  font-weight: 700;
+}
+
+.btn:active {
+  transform: scale(.97);
+}
+
+.btn:disabled {
+  opacity: .35;
+}
+
+/* SOUND */
+
+.sound-status {
+  text-align: center;
+  font-size: 11px;
+  opacity: .55;
+  margin-top: 14px;
+}
+
+/* COMPLETION */
+
+.complete {
+  display: none;
+  text-align: center;
+  padding: 30px 10px;
+}
+
+.complete h2 {
+  font-size: 28px;
+  margin: 5px 0 15px;
+}
+
+.complete p {
+  opacity: .7;
+  line-height: 1.7;
+}
+
+.full-charge {
+  font-size: 38px;
+  font-weight: 700;
+  margin: 20px 0;
+  animation: fullPulse 2s ease-in-out infinite;
+}
+
+@keyframes fullPulse {
+  0%,100% { transform: scale(1); }
+  50% { transform: scale(1.08); }
+}
+
+/* FOOTER */
+
+.footer {
+  text-align: center;
+  margin-top: 28px;
+  font-size: 9px;
+  opacity: .42;
+  line-height: 1.7;
+}
+
+.footer button {
+  margin-top: 5px;
+  border: 0;
+  background: none;
+  color: inherit;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+/* DISCLAIMER */
+
+.disclaimer {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.88);
+  z-index: 50;
+  padding: 25px;
+  overflow-y: auto;
+}
+
+.disclaimer-box {
+  max-width: 500px;
+  margin: 30px auto;
+  background: #11131b;
+  border: 1px solid rgba(255,255,255,.15);
+  border-radius: 20px;
+  padding: 25px;
+  line-height: 1.7;
+}
+
+.disclaimer h2 {
+  margin-top: 0;
+}
+
+.close {
+  width: 100%;
+  margin-top: 20px;
+}
+
+/* SMALL SCREEN */
+
+@media(max-width:380px) {
+
+  .app {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+
+  .day-title {
+    font-size: 23px;
+  }
+
+  .narrative {
+    font-size: 16px;
+  }
+
+  .battery {
+    width: 190px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="app">
+
+  <header class="header">
+    <div class="logo">
+      KEMP EYE <span>👁</span> AI
+    </div>
+
+    <div class="subtitle">
+      10-DAY REJUVENATION QUEST
+    </div>
+  </header>
+
+  <div class="eye-area">
+    <div class="eye"></div>
+  </div>
+
+  <div class="day-label" id="dayLabel">
+    DAY 1
+  </div>
+
+  <h1 class="day-title" id="dayTitle">
+    ARRIVAL
+  </h1>
+
+  <div class="day-theme" id="dayTheme">
+    Begin by simply arriving.
+  </div>
+
+  <!-- CHARGING STATION -->
+
+  <div class="station">
+
+    <div class="battery">
+      <div class="battery-fill" id="batteryFill"></div>
+    </div>
+
+    <div class="charge-number" id="chargeNumber">
+      10%
+    </div>
+
+    <div class="charge-note">
+      EXPERIENCE PROGRESS — NOT A PHYSIOLOGICAL MEASUREMENT
+    </div>
+
+  </div>
+
+  <!-- EXPERIENCE -->
+
+  <section class="experience" id="experience">
+
+    <div class="phase" id="phase">
+      READY
+    </div>
+
+    <div class="narrative" id="narrative">
+      There is nothing to achieve.<br>
+      Nothing to record.<br><br>
+      For these next few minutes...<br>
+      simply arrive.
+    </div>
+
+  </section>
+
+  <!-- TIMER -->
+
+  <div class="timer">
+
+    <div class="timer-number" id="timer">
+      10:00
+    </div>
+
+    <div class="timer-label">
+      TEN MINUTE EXPERIENCE
+    </div>
+
+  </div>
+
+  <!-- CONTROLS -->
+
+  <div class="controls">
+
+    <button class="btn primary" id="startButton">
+      BEGIN EXPERIENCE
+    </button>
+
+    <button class="btn" id="soundButton">
+      SOUND ON
+    </button>
+
+  </div>
+
+  <div class="sound-status" id="soundStatus">
+    Original browser-generated ambient sound
+  </div>
+
+  <!-- COMPLETION -->
+
+  <section class="complete" id="complete">
+
+    <div class="full-charge">
+      100%
+    </div>
+
+    <h2>FULL RECHARGE</h2>
+
+    <p>
+      You experienced it.<br>
+      Nothing needed to be recorded.
+    </p>
+
+    <button class="btn primary" id="repeatButton">
+      REPEAT DAY
+    </button>
+
+    <button class="btn" id="nextButton" style="margin-top:10px;">
+      NEXT DAY
+    </button>
+
+  </section>
+
+  <footer class="footer">
+
+    © KishanBali / KEMP Wisdom Publications —
+    All Rights Reserved.
+
+    <br>
+
+    <button id="disclaimerButton">
+      Disclaimer
+    </button>
+
+  </footer>
+
+</div>
+
+
+<!-- DISCLAIMER -->
+
+<div class="disclaimer" id="disclaimer">
+
+  <div class="disclaimer-box">
+
+    <h2>KEMP EYE 👁 AI — Disclaimer</h2>
+
+    <p>
+      KEMP EYE 👁 AI is an experiential digital product
+      designed for personal reflection, sensory awareness
+      and immersive experience.
+    </p>
+
+    <p>
+      The charging percentage is a visual metaphor for
+      progression through the experience. It does not
+      represent cellular, neurological, physiological,
+      medical or biological measurement.
+    </p>
+
+    <p>
+      The sounds and narratives are provided as an
+      experiential environment and are not intended to
+      diagnose, treat, cure or prevent any disease or
+      medical condition.
+    </p>
+
+    <p>
+      If any sound, visual element or exercise feels
+      uncomfortable, stop the experience.
+    </p>
+
+    <p>
+      This prototype does not intentionally collect,
+      store or require personal experience data.
+    </p>
+
+    <button class="btn primary close" id="closeDisclaimer">
+      CLOSE
+    </button>
+
+  </div>
+
+</div>
+
+
+<script>
+
+/* =====================================================
+   KEMP EYE AI — 10 DAY EXPERIENCE ENGINE
+   CHECKING PROTOTYPE
+===================================================== */
+
+const days = [
+
+  {
+    title: "ARRIVAL",
+    theme: "Begin by simply arriving.",
+    lines: [
+      "There is nothing to achieve.",
+      "Nothing to record.",
+      "For these next few minutes...",
+      "simply arrive.",
+      "Notice that you are here."
+    ]
+  },
+
+  {
+    title: "LISTENING",
+    theme: "Let sound become your doorway.",
+    lines: [
+      "Listen.",
+      "You don't need to search for anything.",
+      "Let the sound come toward you.",
+      "Notice its beginning.",
+      "Notice its fading.",
+      "And simply listen."
+    ]
+  },
+
+  {
+    title: "TOUCH",
+    theme: "Discover the sensation of contact.",
+    lines: [
+      "Place one hand gently over your chest.",
+      "Feel the contact.",
+      "Feel the warmth of your hand.",
+      "There is nothing to change.",
+      "Simply experience touch."
+    ]
+  },
+
+  {
+    title: "VISION",
+    theme: "Allow seeing to become an experience.",
+    lines: [
+      "Let your eyes rest.",
+      "Notice light.",
+      "Notice shape.",
+      "Notice movement.",
+      "You don't have to name anything.",
+      "Simply see."
+    ]
+  },
+
+  {
+    title: "BREATH",
+    theme: "Notice the movement already happening.",
+    lines: [
+      "Notice your breathing.",
+      "Don't control it.",
+      "Don't improve it.",
+      "Simply notice the movement.",
+      "Air enters.",
+      "Air leaves."
+    ]
+  },
+
+  {
+    title: "SPACE",
+    theme: "Experience the space around you.",
+    lines: [
+      "Notice the space around your body.",
+      "Notice sound in the distance.",
+      "Notice sound nearby.",
+      "Notice your body within this space.",
+      "Nothing needs to be changed."
+    ]
+  },
+
+  {
+    title: "IMMERSION",
+    theme: "Let the senses come together.",
+    lines: [
+      "Listen.",
+      "Feel.",
+      "See.",
+      "Notice the space around you.",
+      "Let the senses exist together.",
+      "Remain here."
+    ]
+  },
+
+  {
+    title: "EXPANSION",
+    theme: "Allow awareness to become wider.",
+    lines: [
+      "Begin with one sensation.",
+      "Now notice another.",
+      "Let your awareness become wider.",
+      "There is no boundary you need to find.",
+      "Simply experience more of what is already here."
+    ]
+  },
+
+  {
+    title: "INTEGRATION",
+    theme: "Experience the whole moment.",
+    lines: [
+      "Sound is here.",
+      "Your body is here.",
+      "Your breath is here.",
+      "The space around you is here.",
+      "Let everything belong to this moment."
+    ]
+  },
+
+  {
+    title: "FULL REJUVENATION",
+    theme: "Complete the ten-day journey.",
+    lines: [
+      "There is nowhere else you need to go.",
+      "Feel the moment you are in.",
+      "Listen.",
+      "Feel.",
+      "Breathe.",
+      "Simply experience.",
+      "The journey is complete."
+    ]
+  }
+
+];
+
+
+/* =====================================================
+   STATE
+===================================================== */
+
+let currentDay = 1;
+let running = false;
+let secondsRemaining = 600;
+let timerInterval = null;
+let narrativeInterval = null;
+
+let soundEnabled = true;
+
+let audioContext = null;
+let oscillator = null;
+let gainNode = null;
+
+
+/* =====================================================
+   ELEMENTS
+===================================================== */
+
+const dayLabel = document.getElementById("dayLabel");
+const dayTitle = document.getElementById("dayTitle");
+const dayTheme = document.getElementById("dayTheme");
+
+const batteryFill = document.getElementById("batteryFill");
+const chargeNumber = document.getElementById("chargeNumber");
+
+const narrative = document.getElementById("narrative");
+const phase = document.getElementById("phase");
+
+const timer = document.getElementById("timer");
+
+const startButton = document.getElementById("startButton");
+const soundButton = document.getElementById("soundButton");
+
+const soundStatus = document.getElementById("soundStatus");
+
+const experience = document.getElementById("experience");
+const complete = document.getElementById("complete");
+
+const repeatButton = document.getElementById("repeatButton");
+const nextButton = document.getElementById("nextButton");
+
+const disclaimer = document.getElementById("disclaimer");
+const disclaimerButton = document.getElementById("disclaimerButton");
+const closeDisclaimer = document.getElementById("closeDisclaimer");
+
+
+/* =====================================================
+   LOAD DAY
+===================================================== */
+
+function loadDay(day) {
+
+  currentDay = day;
+
+  const data = days[day - 1];
+
+  dayLabel.textContent = "DAY " + day;
+  dayTitle.textContent = data.title;
+  dayTheme.textContent = data.theme;
+
+  const percentage = day * 10;
+
+  batteryFill.style.width = percentage + "%";
+  chargeNumber.textContent = percentage + "%";
+
+  timer.textContent = "10:00";
+
+  phase.textContent = "READY";
+
+  narrative.innerHTML =
+    data.lines[0] +
+    "<br><br>" +
+    data.lines[1];
+
+  experience.style.display = "block";
+  complete.style.display = "none";
+
+  startButton.disabled = false;
+  startButton.textContent = "BEGIN EXPERIENCE";
+
+  secondsRemaining = 600;
+
+}
+
+
+/* =====================================================
+   TIMER
+===================================================== */
+
+function startExperience() {
+
+  if (running) return;
+
+  running = true;
+
+  startButton.disabled = true;
+  startButton.textContent = "EXPERIENCE IN PROGRESS";
+
+  phase.textContent = "ARRIVE";
+
+  startSound();
+
+  startNarrative();
+
+  timerInterval = setInterval(() => {
+
+    secondsRemaining--;
+
+    updateTimer();
+
+    updatePhase();
+
+    if (secondsRemaining <= 0) {
+
+      finishExperience();
+
+    }
+
+  }, 1000);
+
+}
+
+
+/* =====================================================
+   TIMER DISPLAY
+===================================================== */
+
+function updateTimer() {
+
+  const minutes =
+    Math.floor(secondsRemaining / 60)
+      .toString()
+      .padStart(2,"0");
+
+  const seconds =
+    (secondsRemaining % 60)
+      .toString()
+      .padStart(2,"0");
+
+  timer.textContent =
+    minutes + ":" + seconds;
+
+}
+
+
+/* =====================================================
+   EXPERIENCE PHASES
+===================================================== */
+
+function updatePhase() {
+
+  const elapsed = 600 - secondsRemaining;
+
+  if (elapsed < 60) {
+
+    phase.textContent = "ARRIVE";
+
+  } else if (elapsed < 180) {
+
+    phase.textContent = "ONE SENSE";
+
+  } else if (elapsed < 300) {
+
+    phase.textContent = "BODY";
+
+  } else if (elapsed < 420) {
+
+    phase.textContent = "DEEPEN";
+
+  } else if (elapsed < 540) {
+
+    phase.textContent = "EXPAND";
+
+  } else {
+
+    phase.textContent = "INTEGRATE";
+
+  }
+
+}
+
+
+/* =====================================================
+   AI-STYLE NARRATIVE
+===================================================== */
+
+function startNarrative() {
+
+  let index = 0;
+
+  function showNext() {
+
+    if (!running) return;
+
+    const data = days[currentDay - 1];
+
+    narrative.style.opacity = "0";
+
+    setTimeout(() => {
+
+      narrative.innerHTML =
+        data.lines[index];
+
+      narrative.style.transition =
+        "opacity 1.5s ease";
+
+      narrative.style.opacity = "1";
+
+    }, 800);
+
+    index++;
+
+    if (index >= data.lines.length) {
+      index = 0;
+    }
+
+  }
+
+  narrativeInterval =
+    setInterval(showNext, 40000);
+
+}
+
+
+/* =====================================================
+   FINISH
+===================================================== */
+
+function finishExperience() {
+
+  running = false;
+
+  clearInterval(timerInterval);
+  clearInterval(narrativeInterval);
+
+  stopSound();
+
+  secondsRemaining = 0;
+  updateTimer();
+
+  phase.textContent = "COMPLETE";
+
+  experience.style.display = "none";
+
+  complete.style.display = "block";
+
+  batteryFill.style.width =
+    (currentDay * 10) + "%";
+
+  chargeNumber.textContent =
+    (currentDay * 10) + "%";
+
+  repeatButton.textContent =
+    "REPEAT DAY " + currentDay;
+
+  if (currentDay >= 10) {
+
+    nextButton.textContent =
+      "START AGAIN — DAY 1";
+
+  } else {
+
+    nextButton.textContent =
+      "NEXT DAY — DAY " + (currentDay + 1);
+
+  }
+
+}
+
+
+/* =====================================================
+   REPEAT
+===================================================== */
+
+repeatButton.addEventListener("click", () => {
+
+  loadDay(currentDay);
+
+});
+
+
+/* =====================================================
+   NEXT DAY
+===================================================== */
+
+nextButton.addEventListener("click", () => {
+
+  if (currentDay >= 10) {
+
+    loadDay(1);
+
+  } else {
+
+    loadDay(currentDay + 1);
+
+  }
+
+});
+
+
+/* =====================================================
+   SOUND ENGINE
+   Browser-generated original ambient tone
+===================================================== */
+
+function startSound() {
+
+  if (!soundEnabled) return;
+
+  try {
+
+    if (!audioContext) {
+
+      audioContext =
+        new (window.AudioContext ||
+        window.webkitAudioContext)();
+
+    }
+
+    if (audioContext.state === "suspended") {
+
+      audioContext.resume();
+
+    }
+
+    stopSound();
+
+    oscillator =
+      audioContext.createOscillator();
+
+    gainNode =
+      audioContext.createGain();
+
+    /*
+      Different base tone per day.
+      These are musical/ambient tones only.
+      No therapeutic frequency claim.
+    */
+
+    const frequencies = [
+      174,
+      196,
+      220,
+      233,
+      261.63,
+      293.66,
+      329.63,
+      349.23,
+      392,
+      440
+    ];
+
+    oscillator.frequency.value =
+      frequencies[currentDay - 1];
+
+    oscillator.type = "sine";
+
+    gainNode.gain.setValueAtTime(
+      0,
+      audioContext.currentTime
+    );
+
+    gainNode.gain.linearRampToValueAtTime(
+      0.045,
+      audioContext.currentTime + 4
+    );
+
+    oscillator.connect(gainNode);
+
+    gainNode.connect(
+      audioContext.destination
+    );
+
+    oscillator.start();
+
+    soundStatus.textContent =
+      "AI-style ambient tone active";
+
+  } catch (error) {
+
+    soundStatus.textContent =
+      "Sound unavailable on this device";
+
+  }
+
+}
+
+
+/* =====================================================
+   STOP SOUND
+===================================================== */
+
+function stopSound() {
+
+  if (!oscillator || !gainNode) return;
+
+  try {
+
+    gainNode.gain.cancelScheduledValues(
+      audioContext.currentTime
+    );
+
+    gainNode.gain.linearRampToValueAtTime(
+      0,
+      audioContext.currentTime + 1
+    );
+
+    oscillator.stop(
+      audioContext.currentTime + 1.1
+    );
+
+  } catch(e) {}
+
+  oscillator = null;
+  gainNode = null;
+
+}
+
+
+/* =====================================================
+   SOUND TOGGLE
+===================================================== */
+
+soundButton.addEventListener("click", () => {
+
+  soundEnabled = !soundEnabled;
+
+  if (soundEnabled) {
+
+    soundButton.textContent =
+      "SOUND ON";
+
+    soundStatus.textContent =
+      "Ambient sound enabled";
+
+    if (running) {
+      startSound();
+    }
+
+  } else {
+
+    soundButton.textContent =
+      "SOUND OFF";
+
+    soundStatus.textContent =
+      "Sound disabled";
+
+    stopSound();
+
+  }
+
+});
+
+
+/* =====================================================
+   START
+===================================================== */
+
+startButton.addEventListener(
+  "click",
+  startExperience
+);
+
+
+/* =====================================================
+   DISCLAIMER
+===================================================== */
+
+disclaimerButton.addEventListener(
+  "click",
+  () => {
+
+    disclaimer.style.display = "block";
+
+  }
+);
+
+
+closeDisclaimer.addEventListener(
+  "click",
+  () => {
+
+    disclaimer.style.display = "none";
+
+  }
+);
+
+
+/* =====================================================
+   INITIALIZE
+===================================================== */
+
+loadDay(1);
+
+</script>
+
+</body>
+</html>
