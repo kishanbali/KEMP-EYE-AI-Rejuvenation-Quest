@@ -1,7 +1,12 @@
 name: Create PWA PNG Icons
+
 on:
   push:
     branches: [main]
+
+permissions:
+  contents: write
+
 jobs:
   icons:
     runs-on: ubuntu-latest
